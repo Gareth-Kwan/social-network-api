@@ -10,13 +10,13 @@ const thoughtSchema = new Schema(
       min_length: 1,
       max_length: 280,
     },
-    createdAt: {
-      type: String,
-      required: true,
-      max_length: 50,
-      timestamps: true,
-      default: Date.now,
-    },
+    // createdAt: {
+    //   type: String,
+    //   required: true,
+    //   max_length: 50,
+    //   timestamps: true,
+    //   default: Date.now,
+    // },
     username: {
       type: String,
       required: true,
@@ -24,6 +24,7 @@ const thoughtSchema = new Schema(
     reactions: [reactionSchema],
   },
   {
+    timestamps:true,
     toJSON: {
       getters: true,
     },
@@ -32,4 +33,4 @@ const thoughtSchema = new Schema(
 
 const Thought = model("thought", thoughtSchema);
 
-module.exports = thoughtSchema;
+module.exports = Thought;
